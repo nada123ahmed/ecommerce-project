@@ -1,6 +1,7 @@
 import React from 'react'
-import "./ProtectedAuth.module.css"
+
 import { Navigate } from 'react-router-dom'
+import "./ProtectedAuth.module.css"
 export default function ProtectedAuth(props) {
   if (localStorage.getItem("userToken")) {
     

@@ -1,13 +1,13 @@
 
 import React, { useContext, useEffect, useState } from 'react';
-import "./Wishlist.module.css"; 
+
 import { WishlistContext } from '../../Context/WishlistContext';
 import { CartContext } from '../../Context/CartContext'; 
 import Loader from '../Loader/Loader';
 import emptyWishlist from "../../assets/images.jpg";
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast'; 
-
+import "./WishList.module.css"; 
 export default function Wishlist() {
   
   let { getWishlist, removeWishlistItem, wishlistItems, setWishlistItems } = useContext(WishlistContext);

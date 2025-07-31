@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import "./Register.module.css"
+
  import { useFormik } from 'formik';
  import * as Yup from 'yup';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import "./Register.module.css"
 export default function Register() {
 // function validate(values){
 // const errors={};
