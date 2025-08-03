@@ -23,11 +23,7 @@ let mySchema= Yup.object({
       password:"",
     },
     validationSchema:mySchema,
-    // onSubmit:(values)=>{
-    // console.log(values);
-    // registerForm(values);
-    // return;
-    // }
+    
     onSubmit: (values) => {
   if ( !values.email || !values.password ) {
     console.log("Please fill all fields before submitting");
@@ -61,7 +57,7 @@ setIsloading(false);
       setErrorMessage(error.response.data.message);
       setIsloading(false);
 
-      // alert(error.response?.data?.message || "Registration failed");
+     
     }
   }
   return (

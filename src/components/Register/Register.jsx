@@ -6,39 +6,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import "./Register.module.css"
 export default function Register() {
-// function validate(values){
-// const errors={};
-// if(!values.name){
-//   errors.name=" name is required"
-// }else if(values.name.length <3){
-//   errors.name="length cant be less than 3 car"
 
-// }
-// if (!values.email) {
-//      errors.email = ' email is Required';
-//    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-//      errors.email = 'Invalid email address';
-//    }
-
-// if (!values.password) {
-//      errors.password = ' password is Required';
-//    } else if (!/^[A-Z][a-z0-9]{3,9}$/.test(values.password)) {
-//      errors.password = 'Invalid password';
-//    }
-
-// if (!values.rePassword) {
-//      errors.rePassword = ' re-password is Required';
-//    } else if (values.password!==values.rePassword) {
-//      errors.rePassword = 'Invalid password not match';
-//    }
-// if (!values.phone) {
-//      errors.phone = ' phone is Required';
-//    } else if (!/^(002)?01[0125][0-9]{8}$/.test(values.phone)) {
-//      errors.phone = 'Invalid phone';
-//    }
-
-// return errors
-// }
 
 
 const [userMessage, setUserMessage] = useState(null);
@@ -61,11 +29,7 @@ let mySchema= Yup.object({
       phone:"",
     },
     validationSchema:mySchema,
-    // onSubmit:(values)=>{
-    // console.log(values);
-    // registerForm(values);
-    // return;
-    // }
+   
     onSubmit: (values) => {
   if (!values.name || !values.email || !values.password || !values.rePassword || !values.phone) {
     console.log("Please fill all fields before submitting");
@@ -76,21 +40,7 @@ let mySchema= Yup.object({
 },
   })
 
-// async function registerForm(values) {
-//  let data= await axios.post("https://ecommerce.routemisr.com/api/v1/auth/signup",values)
-//  console.log(data);
- 
-// }
-// async function registerForm(values) {
-//   try {
-//     let data = await axios.post("https://ecommerce.routemisr.com/api/v1/auth/signup", values);
-//     console.log("Success:", data);
-//   } catch (error) {
-//     console.log("Error:", error.response ? error.response.data : error.message);
-//     // هنا ممكن تعرضي الخطأ للمستخدم لو عايزة
-//     // alert(error.response?.data?.message || "Registration failed");
-//   }
-// }
+/
 async function registerForm(values) {
   setIsloading(true);
     try {
@@ -112,7 +62,7 @@ setIsloading(false);
       setErrorMessage(error.response.data.message);
       setIsloading(false);
 
-      // alert(error.response?.data?.message || "Registration failed");
+      
     }
   }
   return (
