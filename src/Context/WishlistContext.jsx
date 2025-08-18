@@ -33,10 +33,8 @@ export default function WishlistContextProvider(props) {
         return true; 
       }
     } catch (error) {
-      // console.error("Error adding to wishlist", error);
-      // toast.error("Failed to add to wishlist");
-       const errorMessage = error.response?.data?.message || "Failed to add to wishlist";
-    toast.error(errorMessage);
+      console.error("Error adding to wishlist", error);
+      toast.error("Failed to add to wishlist");
       return false; 
     }
   }

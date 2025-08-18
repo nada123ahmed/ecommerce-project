@@ -37,8 +37,7 @@ setTotalPrice(data.data.data.totalCartPrice)
 }
 ).catch((error)=>{
     // console.log(error);
-    //  toast.error(data?.data?.message)
-     toast.error(error.response?.data?.message || "Error adding item to cart");
+     toast.error(data?.data?.message)
     return error;
     
 })
@@ -126,8 +125,7 @@ setCartId(data.data.data._id);
 }
 
 async function onlinePayment(shippingAddress){
-     const baseUrl = window.location.origin;
-    return await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${baseUrl}` ,{
+    return await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=http://localhost:5173` ,{
         shippingAddress
     },
     {
@@ -140,8 +138,8 @@ async function onlinePayment(shippingAddress){
         console.log(data,"online payment");
         window.location.href=data.data.session.url;
 
-// setnumOfItems(0)
-//      setTotalPrice(0)
+setnumOfItems(0)
+     setTotalPrice(0)
     
    
     return data
@@ -167,8 +165,7 @@ async function cashPayment(shippingAddress){
 ).then((data)=>{
    
         console.log(data,"online payment");
-        // window.location.href="http://localhost:5173"
-         window.location.href="/allorders";
+        window.location.href="http://localhost:5173"
 setnumOfItems(0)
      setTotalPrice(0)
 
