@@ -125,7 +125,8 @@ setCartId(data.data.data._id);
 }
 
 async function onlinePayment(shippingAddress){
-    return await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=http://localhost:5173` ,{
+     const baseUrl = window.location.origin;
+    return await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${baseUrl}` ,{
         shippingAddress
     },
     {
@@ -165,7 +166,8 @@ async function cashPayment(shippingAddress){
 ).then((data)=>{
    
         console.log(data,"online payment");
-        window.location.href="http://localhost:5173"
+        // window.location.href="http://localhost:5173"
+         window.location.href="/allorders";
 setnumOfItems(0)
      setTotalPrice(0)
 

@@ -43,7 +43,7 @@ export default function Navbar() {
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={-1} role="button" className="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg> 
             </div>
             {Token ? (
               <ul
@@ -69,7 +69,7 @@ export default function Navbar() {
               </ul>
             ) : null}
           </div>
-          <img src={logo} alt="logo-img" />
+          <img className='w-[170px] h-[70px]'  src={logo} alt="logo-img" />
         </div>
         <div className="navbar-center hidden lg:flex">
           {Token ? (

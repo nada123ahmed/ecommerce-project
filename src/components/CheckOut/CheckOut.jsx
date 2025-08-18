@@ -13,8 +13,10 @@ export default function CheckOut() {
     try {
       if (values.paymentMethod === "online") {
         await onlinePayment(values);
+       
       } else if (values.paymentMethod === "cash") {
         await cashPayment(values);
+        
       } else {
         console.warn("No payment method selected.");
         toast.error("Please select a payment method.");
