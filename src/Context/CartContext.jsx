@@ -37,7 +37,8 @@ setTotalPrice(data.data.data.totalCartPrice)
 }
 ).catch((error)=>{
     // console.log(error);
-     toast.error(data?.data?.message)
+    //  toast.error(data?.data?.message)
+     toast.error(error.response?.data?.message || "Error adding item to cart");
     return error;
     
 })
@@ -139,8 +140,8 @@ async function onlinePayment(shippingAddress){
         console.log(data,"online payment");
         window.location.href=data.data.session.url;
 
-setnumOfItems(0)
-     setTotalPrice(0)
+// setnumOfItems(0)
+//      setTotalPrice(0)
     
    
     return data
